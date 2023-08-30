@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'jobs',
+    'crispy_forms',
+    'crispy_bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -131,3 +133,11 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 # Login and logout redirect page
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+# Crispy tags
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# Backend to send emails
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
