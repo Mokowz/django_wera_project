@@ -20,3 +20,13 @@ class Jobs(models.Model):
     
     def get_absolute_url(self):
         return reverse("job_detail", args=[str(self.pk)])
+    
+
+class Application(models.Model):
+    rate = models.PositiveIntegerField()
+    job = models.ForeignKey(
+        Jobs,
+        on_delete=models.CASCADE
+    )
+    apply = models.TextField()
+
