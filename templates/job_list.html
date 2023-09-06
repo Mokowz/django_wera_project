@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for job in jobs %}
+        <div class="card mt-3" href="{% url 'job_detail' job.pk %}">
+            <div class="card-header">
+                <a href="{% url 'job_detail' job.pk %}"><strong>{{ job.title }}</strong></a>
+                <span class="text-black-50">By {{ job.employer }} | {{ job.date_created }}</span>
+                <span class="text-black-50">Payment: Ksh.{{ job.payment }}</span>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ job.content }}</p>
+            </div>
+            <!-- <div class="card-footer text-body-secondary">
+                <p>
+                    <a href="">Edit</a> | 
+                    <a href="">Delete</a>
+                </p>
+            </div> -->
+        </div>
+    {% endfor %}
+{% endblock %}
